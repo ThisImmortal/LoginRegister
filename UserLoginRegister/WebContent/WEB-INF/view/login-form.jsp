@@ -8,41 +8,70 @@
 <head>
 <title>Login Form</title>
 
-<style>.error{color: red;}</style>
+<style>
+.error {
+	color: red;
+}
+</style>
+
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/Login.css" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.css" />
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-	<form:form action="loginProcess" modelAttribute="login" method="GET">
+	<div class="login-wrapper">
 
-		<label>Email:</label>
-		<form:input path="email" /> 
-		<form:errors path="email" cssClass="error"/>
-		
 
-		<br>
-		<br>
 
-		<label>Password</label>
-		<form:password path="password" />
-		<form:errors path="password" cssClass="error"/>
-		<br><br>
-		${invaliduser}
-		
+		<form:form action="loginProcess" modelAttribute="login" method="GET">
 
-		<br>
-		<br>
+			<h1>
+				<span>User</span> login.
+			</h1>
 
-		<input type="submit" value="Log in" />
-		<br>
-		<br>
+			<div class="input-row">
+				<span class="icon"><i class="fa fa-at"></i></span>
+				<form:input path="email" placeholder="Email" />
+				<form:errors path="email" cssClass="error" />
+			</div>
 
 
 
 
+			<div class="input-row">
+				<span class="icon"><i class="fa fa-lock"></i></span>
+				<form:password path="password" placeholder="Password" />
+				<form:errors path="password" cssClass="error" />
+				${invaliduser}
+			</div>
 
-	</form:form>
-	
+
+
+
+			<div class="submit-row">
+
+				<input type="submit" value="Log in&raquo;" /> <span class="reset">or
+					<a href="showRegisterForm">Register</a>
+				</span>
+
+			</div>
+
+
+
+
+
+
+
+		</form:form>
+
+	</div>
+
 	<a href="${pageContext.request.contextPath}/user/toMainPage">Back</a>
 
 </body>

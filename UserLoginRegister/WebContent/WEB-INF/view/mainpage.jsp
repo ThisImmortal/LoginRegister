@@ -4,9 +4,7 @@
 <head>
 <title>Login or Register</title>
 
-<script>
-    history.forward();
-</script>
+
 
 </head>
 

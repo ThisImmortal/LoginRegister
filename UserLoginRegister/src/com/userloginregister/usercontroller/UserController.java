@@ -43,9 +43,11 @@ public class UserController {
 	}
 
 	@GetMapping("/toMainPage")
-	public String toMainPage() {
+	public String toMainPage(Model theModel) {
 
-		return "mainpage";
+		Login theLogin = new Login();
+		theModel.addAttribute("login", theLogin);
+		return "login-form";
 	}
 
 	@GetMapping("/toWelcomePage")
