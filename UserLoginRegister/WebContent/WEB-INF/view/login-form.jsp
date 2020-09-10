@@ -11,6 +11,8 @@
 <style>
 .error {
 	color: red;
+	font-size: 12px;
+	
 }
 </style>
 
@@ -48,7 +50,7 @@
 				<span class="icon"><i class="fa fa-lock"></i></span>
 				<form:password path="password" placeholder="Password" />
 				<form:errors path="password" cssClass="error" />
-				${invaliduser}
+				<div class="error">${invaliduser}</div>
 			</div>
 
 
@@ -72,7 +74,7 @@
 
 	</div>
 
-	<a href="${pageContext.request.contextPath}/user/toMainPage">Back</a>
+	
 
 </body>
 </html>

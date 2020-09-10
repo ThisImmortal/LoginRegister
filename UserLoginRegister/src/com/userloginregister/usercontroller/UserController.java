@@ -59,10 +59,10 @@ public class UserController {
 		return "welcome-page";
 	}
 
-	@GetMapping("/toCVTemplate")
-	public String toCVTemplate() {
+	@GetMapping("/backToTutorialPage")
+	public String toBack() {
 
-		return "cv-templates/cv-template1";
+		return "tutorial-page";
 	}
 
 	@GetMapping("/showLoginForm")
@@ -116,7 +116,7 @@ public class UserController {
 
 			mm.addAttribute("user", user);
 			
-			return "welcome-page";
+			return "tutorial-page";
 
 		}
 

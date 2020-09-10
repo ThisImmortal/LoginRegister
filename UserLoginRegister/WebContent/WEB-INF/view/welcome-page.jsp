@@ -38,7 +38,7 @@
 
 	<a href="${updateLink}">Update your info</a>
 	<br><br>
-	<a href="${pageContext.request.contextPath}/user/toCVTemplate">Create your CV</a>
+	<a href="${pageContext.request.contextPath}/user/backToTutorialPage">Back to main page</a>
 	<br><br>
 	<a href="${pageContext.request.contextPath}/user/toMainPage">Log out</a>
 	

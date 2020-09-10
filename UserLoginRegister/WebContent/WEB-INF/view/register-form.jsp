@@ -9,7 +9,9 @@
 
 <style>
 .error {
-	color: red
+	color: red;
+	font-size:13px;
+	display: block;
 }
 </style>
 
@@ -30,37 +32,45 @@
 
 		<div class="container">
 
-			<hr>
-			<label>First Name:</label>
-			<form:input path="firstName" />
+			<h1>
+				<span>User</span> register.
+			</h1>
+			
+			<form:input path="firstName" placeholder="First Name"/>
 			<form:errors path="firstName" cssClass="error" />
-			<br> <br> <label>Last name</label>
-			<form:input path="lastName" />
-			<br> <br> <label>Country</label>
-			<form:input path="country" />
-			<br> <br> <label>Email</label>
-			<form:input path="email" />
+			<br> <br> 
+			<form:input path="lastName" placeholder="Last Name"/>
+			<br> <br> 
+			<form:input path="country" placeholder="Country" />
+			<br> <br> 
+			<form:input path="email" placeholder="Email"/>
 			<form:errors path="email" cssClass="error" />
-			<br> <br> <label>Password</label>
-			<form:password path="password" />
+			<br> <br> 
+			<form:password path="password" placeholder="Password"/>
 			<form:errors path="password" cssClass="error" />
 			<form:errors path="conditionTrue" cssClass="error" />
-			<br> <br> <label>Repeat password</label>
-			<form:password path="rePassword" />
+			<br> <br> 
+			<form:password path="rePassword" placeholder="Password verifying"/>
 			<form:errors path="rePassword" cssClass="error" />
 			<form:errors path="conditionTrue" cssClass="error" />
 			<br> <br>
 
-			<hr>
+			
 
 		</div>
 
 		<input type="submit" value="Register" class="registerbtn" />
-		<br>
-		<br>
+		
+		<button onclick="location.href='${pageContext.request.contextPath}/user/toMainPage'" type="button" 
+		class="registerbtn">Back</button>
+		
+		
+		
+		
+		
 
 	</form:form>
 	
 	</div>
 
-	<a href="${pageContext.request.contextPath}/user/toMainPage">Back</a>
+	

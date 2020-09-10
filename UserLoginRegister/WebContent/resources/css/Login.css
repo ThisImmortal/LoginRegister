@@ -50,12 +50,13 @@ form .icon{
 form input[type="text"],form input[type="password"] {
     padding:0.8em 0.8em 0.8em 0;
     font-size:1.4em;
-    color:#c2c2c2;
+    color: black;
     width:275px;
 }
 
 form input[type="text"]:focus,form input[type="password"]:focus {
     outline:0;
+    
 }
 
 form input[type="submit"]{
@@ -91,5 +92,7 @@ form .reset a{
 form .reset a:hover{
     text-decoration: none;
 }
+
+
 
 

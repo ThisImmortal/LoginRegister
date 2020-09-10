@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 body{
-    font: 62.5% Open Sans, Freesans, sans-serif;
+    font: 100% Open Sans, Freesans, sans-serif;
     background: #2c3338;
 }
 
@@ -47,7 +47,7 @@ form .icon{
 form input[type="text"],form input[type="password"] {
     padding:0.8em 0.8em 0.8em 0;
     font-size:1.4em;
-    color:#c2c2c2;
+    color:black;
     width:275px;
 }
 
