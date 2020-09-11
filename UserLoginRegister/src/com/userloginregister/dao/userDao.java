@@ -15,4 +15,6 @@ public interface userDao {
 
 	public void updateUserInfo(@Valid User theUser);
 
+	public String getPasswordForEmail(String email);
+
 }

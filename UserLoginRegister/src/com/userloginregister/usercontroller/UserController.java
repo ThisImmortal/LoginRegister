@@ -65,6 +65,12 @@ public class UserController {
 		return "tutorial-page";
 	}
 
+	@GetMapping("/toForgotPasswordPage")
+	public String toForgotPasswordPage(@ModelAttribute("login") Login theLogin) {
+
+		return "forgot-password";
+	}
+
 	@GetMapping("/showLoginForm")
 	public String showLoginForm(Model theModel) {
 
@@ -90,7 +96,7 @@ public class UserController {
 		if (theBindingResult.hasErrors()) {
 			return "register-form";
 		}
-		
+
 //		if(!theUser.getPassword().equals(theUser.getRePassword())) {
 //			
 //			mm.addAttribute("passwordMatching", "Passwords don't match");
@@ -110,12 +116,11 @@ public class UserController {
 			return "login-form";
 		}
 		User user = userService.userIsValid(login);
-		
 
-		if (user!=null) {
+		if (user != null) {
 
 			mm.addAttribute("user", user);
-			
+
 			return "tutorial-page";
 
 		}
@@ -130,7 +135,7 @@ public class UserController {
 
 		User theUser = userService.getUserById(theId);
 		theModel.addAttribute("user", theUser);
-		
+
 		return "update-form";
 	}
 
@@ -147,6 +152,31 @@ public class UserController {
 		userService.updateUserInfo(theUser);
 
 		return "welcome-page";
+	}
+
+	@PostMapping("/sendPasswordToEmail")
+	public String sendPasswordToEmail(@Valid @ModelAttribute("login") Login theLogin, BindingResult resultBinding,
+			ModelMap mm) {
+
+		if (resultBinding.hasErrors()) {
+
+			return "forgot-password";
+		}
+
+		String email = theLogin.getEmail();
+		String password = userService.getPasswordForEmail(email);
+
+		if (password == null) {
+
+			mm.addAttribute("emailNotExistMessage", "Such email doesn't exist");
+
+			return "forgot-password";
+		}
+		
+		
+
+		return "";
+
 	}
 
 }

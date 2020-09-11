@@ -78,4 +78,29 @@ public class userDaoImpl implements userDao {
 		
 	}
 
+	@Override
+	public String getPasswordForEmail(String email) {
+		
+//		Session session = sessionFactory.getCurrentSession();
+//		
+//		String SQLScript = "from Login as l where l.email=:email";
+//
+//		Query<Login> query = session.createQuery(SQLScript);
+//		query.setParameter("email", email);
+//		
+//
+//		List<Login> loginList = query.getResultList();
+//		Login theLogin = null;
+//
+//		if (loginList != null && loginList.size() > 0) {
+//
+//			theLogin = loginList.get(0);
+//
+//		}
+//		
+//		String password = theLogin.getPassword();
+//		
+		return null;
+	}
+
 }

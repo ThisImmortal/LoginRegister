@@ -46,4 +46,11 @@ public class userServiceImpl implements userService {
 		
 	}
 
+	@Override
+	@Transactional
+	public String getPasswordForEmail(String email) {
+		
+		return userDao.getPasswordForEmail(email);
+	}
+
 }

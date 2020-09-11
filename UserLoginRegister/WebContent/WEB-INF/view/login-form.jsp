@@ -63,6 +63,17 @@
 				</span>
 
 			</div>
+			
+			<br><br>
+			
+			<div class="submit-row">
+
+				 <span class="reset">
+					<a href="toForgotPasswordPage">Forgot Password?</a>
+				</span>
+
+			</div>
+			
 
 
 

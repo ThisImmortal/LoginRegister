@@ -15,4 +15,8 @@ public interface userService {
 
 	public void updateUserInfo(@Valid User theUser);
 
+	public String getPasswordForEmail(String email);
+
+	
+
 }
