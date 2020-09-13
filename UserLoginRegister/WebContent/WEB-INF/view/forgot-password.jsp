@@ -24,33 +24,37 @@
 
 <body>
 
-<form:form action="sendPasswordToEmail" modelAttribute="login" method="POST">
+<h1>Password: ${password}</h1>
 
-			
+	<form:form action="sendPasswordToEmail" modelAttribute="forgotPassword"
+		method="GET">
 
-			<div id="sc-password">
+
+
+		<div id="sc-password">
 			<h1>Password Restoration</h1>
 			<div class="sc-container">
-			
-			
+
+
 				<form:input path="email" placeholder="Email" />
 				<form:errors path="email" cssClass="error" />
 				<div class="error">${emailNotExistMessage}</div>
+
+				<input type="submit" value="Send link to email&raquo;" /> <br>
+				<br>
 				
-				<input type="submit" value="Send link to email&raquo;" />
-				<br><br>
-				<button onclick="location.href='${pageContext.request.contextPath}/user/toMainPage'" type="button" 
-		class="registerbtn">Back</button>
-			
+					
+					<a href="toMainPage" type="button" class="reset">Back</a>
+
 			</div>
-				
-			</div>
-			
-			</form:form>
+
+		</div>
+
+	</form:form>
 
 
 
-	
+
 
 
 </body>

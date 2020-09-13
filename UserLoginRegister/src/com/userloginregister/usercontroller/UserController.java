@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
+import com.userloginregister.entity.ForgotPassword;
 import com.userloginregister.entity.Login;
 import com.userloginregister.entity.User;
 import com.userloginregister.service.userService;
@@ -66,8 +67,10 @@ public class UserController {
 	}
 
 	@GetMapping("/toForgotPasswordPage")
-	public String toForgotPasswordPage(@ModelAttribute("login") Login theLogin) {
+	public String toForgotPasswordPage(Model theModel) {
 
+		ForgotPassword fg = new ForgotPassword();
+		theModel.addAttribute("forgotPassword", fg);
 		return "forgot-password";
 	}
 
@@ -154,8 +157,8 @@ public class UserController {
 		return "welcome-page";
 	}
 
-	@PostMapping("/sendPasswordToEmail")
-	public String sendPasswordToEmail(@Valid @ModelAttribute("login") Login theLogin, BindingResult resultBinding,
+	@GetMapping("/sendPasswordToEmail")
+	public String sendPasswordToEmail(@Valid @ModelAttribute("forgotPassword") ForgotPassword fg, BindingResult resultBinding,
 			ModelMap mm) {
 
 		if (resultBinding.hasErrors()) {
@@ -163,8 +166,10 @@ public class UserController {
 			return "forgot-password";
 		}
 
-		String email = theLogin.getEmail();
+		String email = fg.getEmail();
+		
 		String password = userService.getPasswordForEmail(email);
+		
 
 		if (password == null) {
 
@@ -173,9 +178,9 @@ public class UserController {
 			return "forgot-password";
 		}
 		
-		
+		mm.addAttribute("password", password);
 
-		return "";
+		return "forgot-password";
 
 	}
 

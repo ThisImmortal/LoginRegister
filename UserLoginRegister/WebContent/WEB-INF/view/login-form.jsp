@@ -12,7 +12,6 @@
 .error {
 	color: red;
 	font-size: 12px;
-	
 }
 </style>
 
@@ -63,17 +62,18 @@
 				</span>
 
 			</div>
-			
-			<br><br>
-			
+
+			<br>
+			<br>
+
 			<div class="submit-row">
 
-				 <span class="reset">
-					<a href="toForgotPasswordPage">Forgot Password?</a>
+				<span class="reset"> <a href="toForgotPasswordPage">Forgot
+						Password?</a>
 				</span>
 
 			</div>
-			
+
 
 
 
@@ -85,7 +85,7 @@
 
 	</div>
 
-	
+
 
 </body>
 </html>
